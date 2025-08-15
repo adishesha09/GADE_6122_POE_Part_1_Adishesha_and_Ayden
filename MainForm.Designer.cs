@@ -1,6 +1,6 @@
 ﻿namespace GADE_6122_POE_Adishesha_and_Ayden
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
