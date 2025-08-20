@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_6122_POE_Adishesha_and_Ayden
 {
-    internal class Level
+    public class Level
     {
     }
 }
