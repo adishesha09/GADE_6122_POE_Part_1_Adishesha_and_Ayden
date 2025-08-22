@@ -70,7 +70,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
                 }
 
                 // Draw additional arcade info
-                e.Graphics.DrawString("© 2024 ARCADE STUDIOS", infoFont, darkGreenBrush, 220, 400);
+                e.Graphics.DrawString("© 2025 ASN & AGW STUDIOS", infoFont, darkGreenBrush, 220, 400);
                 e.Graphics.DrawString("INSERT COIN TO START", infoFont, darkGreenBrush, 210, 430);
             }
 
@@ -107,7 +107,6 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             base.OnFormClosed(e);
         }
 
-        // Optional: Add mouse click support
         protected override void OnMouseClick(MouseEventArgs e)
         {
             base.OnMouseClick(e);
