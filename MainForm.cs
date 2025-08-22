@@ -115,6 +115,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             if (direction != Direction.None)
             {
                 gameEngine.TriggerMovement(direction);
+                ArcadeSounds.PlayMoveSound();
                 UpdateDisplay();
             }
         }
