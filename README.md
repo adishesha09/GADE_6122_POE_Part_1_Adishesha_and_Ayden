@@ -120,6 +120,13 @@ ArcadeSounds (Sound effects)
 
 ## Repository Structure
 The project maintains a well-organized structure with clear separation of concerns:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+- Core game logic in `/GameCore` classes  
+>>>>>>> b30a68d11846f41f20bba43692c3fec2ffb26885
+>>>>>>> c48b0b0c0a2301c6696afa2b5d710b596b92dc95
 - UI implementation in Windows Forms  
 - Assets organized in `/music` directory  
 - Comprehensive documentation throughout  
