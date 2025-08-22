@@ -13,7 +13,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             this.FormBorderStyle = FormBorderStyle.FixedSingle; 
             this.MaximizeBox = false;
             this.MinimizeBox = true; 
-            this.Size = new Size(1360, 768); 
+            this.Size = new Size(1920, 1080); 
         }
 
         private void ApplyArcadeTheme()
@@ -39,6 +39,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             var crtPanel = new CRTEffectPanel();
             crtPanel.Dock = DockStyle.Fill;
             crtPanel.BackColor = Color.Black;
+            crtPanel.Size = this.ClientSize;
 
             // Set up display label
             lblDisplay = new Label();
@@ -81,6 +82,14 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
+            if (gameEngine.State == GameState.Complete || gameEngine.State == GameState.GameOver)
+            {
+                // Any key restarts the game when completed or game over
+                gameEngine.RestartGame();
+                UpdateDisplay();
+                return;
+            }
+
             Direction direction = Direction.None;
 
             switch (e.KeyCode)
