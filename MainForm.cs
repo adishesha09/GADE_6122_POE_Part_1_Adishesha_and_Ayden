@@ -9,11 +9,34 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
         {
             InitializeComponent();
             InitializeGame();
+            PlayBackgroundMusic();
             ApplyArcadeTheme();
             this.FormBorderStyle = FormBorderStyle.FixedSingle; 
             this.MaximizeBox = false;
             this.MinimizeBox = true; 
             this.Size = new Size(1920, 1080); 
+        }
+
+        private void PlayBackgroundMusic()
+        {
+            try
+            {
+                string musicPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "music", "game.wav");
+                if (System.IO.File.Exists(musicPath))
+                {
+                    SimpleMusicPlayer.PlayMusic(musicPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Could not play music: {ex.Message}");
+            }
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            SimpleMusicPlayer.Dispose(); 
+            base.OnFormClosed(e);
         }
 
         private void ApplyArcadeTheme()
