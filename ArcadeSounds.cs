@@ -16,7 +16,6 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             Console.Beep(800, 50);
         }
 
-<<<<<<< HEAD
         public static void PlayRestartSound()
         {
             Console.Beep(1500, 100);
@@ -24,8 +23,6 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             Console.Beep(1500, 200);
         }
 
-=======
->>>>>>> 15150a9a169ad50752feeecb8d09cef70c6d7a7f
         public static void PlayLevelComplete()
         {
             Console.Beep(1000, 200);
