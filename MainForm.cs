@@ -13,7 +13,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             this.FormBorderStyle = FormBorderStyle.FixedSingle; 
             this.MaximizeBox = false;
             this.MinimizeBox = true; 
-            this.Size = new Size(800, 600); 
+            this.Size = new Size(1360, 768); 
         }
 
         private void ApplyArcadeTheme()
@@ -23,7 +23,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             this.ForeColor = Color.Lime;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Text = "ARCADE ADVENTURE";
+            this.Text = "CODE CRAWLER";
 
             // Remove standard Windows chrome
             this.Padding = new Padding(0);
@@ -32,22 +32,33 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
 
         private void InitializeGame()
         {
-            // Initialize game engine with 10 levels
-            gameEngine = new GameEngine(10);
+            // Remove any existing controls first
+            this.Controls.Clear();
+
+            // Create CRT effect panel
+            var crtPanel = new CRTEffectPanel();
+            crtPanel.Dock = DockStyle.Fill;
+            crtPanel.BackColor = Color.Black;
 
             // Set up display label
             lblDisplay = new Label();
             lblDisplay.AutoSize = false;
             lblDisplay.Dock = DockStyle.Fill;
-            lblDisplay.Font = new Font("Consolas", 12);
+            lblDisplay.Font = new Font("Consolas", 16, FontStyle.Bold);
+            lblDisplay.ForeColor = Color.Lime;
+            lblDisplay.BackColor = Color.Transparent;
             lblDisplay.TextAlign = ContentAlignment.MiddleCenter;
 
-            this.Controls.Add(lblDisplay);
+            // Add label to CRT panel, then panel to form
+            crtPanel.Controls.Add(lblDisplay);
+            this.Controls.Add(crtPanel);
+
+            // Initialize game engine
+            gameEngine = new GameEngine(10);
 
             // Set up keyboard controls
             this.KeyPreview = true;
             this.KeyDown += MainForm_KeyDown;
-            this.Focus();
 
             UpdateDisplay();
         }
