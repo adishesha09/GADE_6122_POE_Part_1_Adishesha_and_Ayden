@@ -97,14 +97,35 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             currentLevel = new Level(width, height, existingHero);
         }
 
+        // Optional enhancement implemented to align with arcade aesthetics
+        public void RestartGame()
+        {
+            currentLevelNumber = 1;
+            gameState = GameState.InProgress;
+
+            int width = random.Next(MIN_SIZE, MAX_SIZE + 1);
+            int height = random.Next(MIN_SIZE, MAX_SIZE + 1);
+            currentLevel = new Level(width, height);
+        }
+
         public override string ToString()
         {
             if (gameState == GameState.Complete)
             {
-                return "Congratulations! You have completed all levels!";
+                return "CONGRATULATIONS!\nYOU HAVE COMPLETED\nALL 10 LEVELS!\n\nPRESS ANY KEY TO RESTART";
             }
 
-            return currentLevel.ToString();
+            // Add level counter to display (Not a project requirement)
+            if (gameState == GameState.GameOver)
+            {
+                return "GAME OVER\n\nPRESS ANY KEY TO RESTART";
+            }
+
+            // Add level counter to display
+            string levelHeader = $"LEVEL {currentLevelNumber}\n";
+            string levelContent = currentLevel.ToString();
+
+            return levelHeader + levelContent;
         }
     }
 }

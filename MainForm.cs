@@ -56,6 +56,17 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             // Initialize game engine
             gameEngine = new GameEngine(10);
 
+            // Calculate size based on current level dimensions
+            int levelWidth = gameEngine.CurrentLevel.Width;
+            int levelHeight = gameEngine.CurrentLevel.Height;
+
+            // Set form size dynamically
+            int formWidth = (levelWidth * 10) + 40; 
+            int formHeight = (levelHeight * 16) + 80; 
+
+            this.ClientSize = new Size(formWidth, formHeight);
+            this.MinimumSize = new Size(formWidth, formHeight);
+
             // Set up keyboard controls
             this.KeyPreview = true;
             this.KeyDown += MainForm_KeyDown;
