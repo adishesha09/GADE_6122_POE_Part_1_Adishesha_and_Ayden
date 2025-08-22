@@ -37,6 +37,8 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
                 hero = (HeroTile)CreateTile(TileType.Hero, heroPos);
             }
 
+            hero.UpdateVision(this);
+
             // Place exit
             Position exitPos = GetRandomEmptyPosition();
             exit = (ExitTile)CreateTile(TileType.Exit, exitPos);
