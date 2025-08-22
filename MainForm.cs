@@ -85,6 +85,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             if (gameEngine.State == GameState.Complete || gameEngine.State == GameState.GameOver)
             {
                 // Any key restarts the game when completed or game over
+                ArcadeSounds.PlayRestartSound();
                 gameEngine.RestartGame();
                 UpdateDisplay();
                 return;
