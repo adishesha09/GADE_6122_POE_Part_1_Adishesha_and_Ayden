@@ -29,5 +29,14 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
             Console.Beep(1200, 200);
             Console.Beep(1500, 400);
         }
+
+        public static void PlayStartGameSound()
+        {
+            Console.Beep(1500, 100);
+            Console.Beep(1800, 100);
+            Console.Beep(2200, 200);
+            Console.Beep(1800, 100);
+            Console.Beep(2200, 300);
+        }
     }
 }
