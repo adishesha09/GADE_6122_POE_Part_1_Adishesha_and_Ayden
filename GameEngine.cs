@@ -66,6 +66,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
                 if (currentLevelNumber >= numberOfLevels)
                 {
                     gameState = GameState.Complete;
+                    ArcadeSounds.PlayLevelComplete();
                     return false;
                 }
                 else
