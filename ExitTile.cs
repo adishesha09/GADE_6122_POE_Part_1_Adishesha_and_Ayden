@@ -12,7 +12,7 @@ namespace GADE_6122_POE_Adishesha_and_Ayden
 
         public override char Display
         {
-            get { return 'E'; }
+            get { return '▒'; }
         }
     }
 }
